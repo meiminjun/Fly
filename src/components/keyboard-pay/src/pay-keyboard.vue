@@ -17,7 +17,7 @@
                     <input type="password" :value="val[i]" disabled>
                 </div>
             </div>
-    
+
             <!--keyboard-->
             <div class="key-box" v-if="keyShow">
                 <div class="item v-1px-t" v-for="(item, i) in keyList" :key="i">
@@ -53,7 +53,7 @@
 <script>
 let timer = null;
 export default {
-    name: 'mei-pay-keyboard',
+    name: 'fly-pay-keyboard',
     props: {
         payTitle: {
             type: String,

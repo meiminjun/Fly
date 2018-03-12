@@ -4,6 +4,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const env = process.env.NODE_ENV
 const isProduction = env === 'production'
+
 const fs = require('fs')
 
 const vueCssLoaders = function (options) {

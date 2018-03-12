@@ -1,6 +1,6 @@
 {
   "name": "vue-fly",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Fly components for Vue.js 2",
   "main": "dist/fly.js",
   "scripts": {
