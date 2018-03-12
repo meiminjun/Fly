@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* 常量定义 */
+// 路径参数
+$path-font:"../../../fonts" !default;		// 字体路径
+$image-path:"../../../images" !default;
+$font-path:"../../../fonts" !default;
+// font设置
+//-----------------------------------------------------
+$font-fy:		Arial,"Microsoft YaHei" !default;	// 默认字体
+$border-width:	1px !default;				// 边框线宽度
+
+// radius
+//-----------------------------------------------------
+$baseRadius:            .15rem !default;
+$smallRadius:           .08rem !default;
+
+// 基本颜色
+//-----------------------------------------------------
+$red: 					#FF0C0C !default;	// 红色
+$org: 					#f37938 !default;	// 橙色
+$yellow:				#fff600 !default;	// 黄色
+$green: 				#1ab55b !default;	// 绿色
+$blue: 					#4175d5 !default;	// 蓝色
+$white:					#fff !default;		// 白色
+$black:					#000 !default;		// 黑色
+$black-light:			#1e1e1e !default;	// 黑色-浅色
+$gray-light:			#dadada !default;	// 浅灰
+$gray-lightest:			#F5F5F5 !default;	// 淡灰
+$color-e7:				#e7e7e7 !default;	// 边框线主色
+$color-b2:				#b2b2b2 !default;
+$color-6:				#666 !default;
+$color-9:				#999 !default;
+$warn:					#faeaca !default;	// 警示色
+$tag-bg:				#ffaf48 !default;	// 标签背景色
+
+
+$color-body:			$gray-lightest !default;	// 背景颜色
+$color-main:			$white;				// 模块颜色
+$color-font:            $black-light !default;	// 字体颜色
+$color-tips:            $color-9 !default;	// 提示字体颜色
+$color-primary:			$org	 !default;	// 主题颜色
+$color-link:            $color-6 !default;	// 链接颜色
+$color-active: 			$org !default;		// 点击颜色
+$color-border:          $color-e7 !default;// 边框颜色
+$buy-border:          	$gray-light !default;// 购买边框颜色
+$color-focus:			$org !default;		// 聚焦颜色
+$color-arrow:			$color-b2 !default;	// 箭头颜色
+$dialog-title:			$black-light !default;// 弹出层标题颜色
+$dialog-col:			$color-9 !default;// 弹出层关闭颜色
+$dialog-br:				$color-e7 !default;// 弹出层边框线颜色
+$dialog-btn:			$color-6 !default;// 弹出层按钮默认颜色
+$bankcard-name:			$black-light !default;// 银行卡名字颜色
+$bankcard-tip:			$color-6	!default;	// 银行卡提示颜色
+$bankcard-tip-bg:		$warn	!default;	// 银行卡提示背景色
+
+
+// 主题颜色
+$primary-font:			$color-primary !default; //主题文字颜色
+$primary-bg:			$color-primary !default; //主题背景颜色
+$primary-br:			$color-primary !default; //主题边框颜色
+$primary-btn:			$color-primary !default; //主题按钮颜色
+
+// 字体颜色
+$font-body:             $black-light !default;	// 默认字体颜色
+$font-title:            $black-light !default;	// 标题字体颜色
+$font-black:			$black-light !default;	// 字体颜色2
+$font-gray:				$color-6 !default;		// 字体颜色2
+$font-tips:            	$color-9 !default;		// 提示字体颜色
+$font-sellout:			$color-9 !default;		// 售罄字体颜色
+$lib-card-head-title:	$black-light !default;//页面卡片标题颜色
+
+// 按钮参数
+$btn-font-color:		$white !default;		// 按钮文字颜色
+$btn-bg-color:			$color-primary !default;	// 按钮背景颜色
+$btn-br-color:			$color-primary !default;	// 按钮边框颜色
+$btn-active-font:		$white !default;			// 按钮点击文字颜色
+$btn-active-br:			$color-primary !default;	// 按钮点击背景颜色
+$btn-active-bg:			$color-primary !default;	// 按钮点击背景颜色
+$btn-none-font:			$white !default;	// 禁用按钮-文字颜色
+$btn-none-bg:			$gray-light !default;	// 禁用按钮-背景颜色
+$btn-none-br:			$gray-light !default;	// 禁用按钮-背景颜色
+$btn-br-size:			$border-width !default;//输入框-边框尺寸
+
+// 输入框参数
+$input-font-color:		$color-6 !default;// 输入框-文字颜色
+$input-bg-color:		$white !default;	//	输入框-背景颜色
+$input-bg-focus:		$white !default;	//	输入框-聚焦背景
+$input-br-color:		$color-border !default;//输入框-边框颜色
+$input-br-size:			$border-width !default;//输入框-边框尺寸
+$input-br-focus:		$color-focus !default;//输入框-聚焦边框色
+
+// 布局色块
+$header-primary:		$color-primary !default;		// 公共头部主题颜色
+$head-border:			$color-e7 !default;	// 公共头部边框线颜色
+$check-color:			$gray-light !default; //复选默认颜色
+$checked-color:			$color-primary !default; //复选选中颜色
+$process-primary:       $org !default; //主要流程颜色
+$process-less:          #ffaf48 !default; //次要流程颜色
+$zIndex-head:			100 !default; //头部层级

@@ -1,0 +1,17 @@
+@charset "UTF-8";
+// 按钮
+@mixin btn($width, $height, $size) {
+	display:inline-block;
+	width:$width;
+	height:$height;
+	line-height:$height;
+	border-radius:$size;
+	text-align:center;
+	border:0;
+	&:active {
+		color:$btn-active-font;
+		background-color:$btn-active-bg;
+		border-color:$btn-active-br;
+	}
+}
+

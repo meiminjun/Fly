@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>form</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link rel="stylesheet" href="../../css/components/form.css">
+  <script src="../../libs/js/flexible.js"></script>
+</head>
+<body>
+<div class="fly-form-component">
+  <Form ref="fly-form-validate">
+    <div>
+      <span class="color-red">*</span><span class="padding-10">姓名</span><input placeholder="请输入姓名" class="fly-form-input">
+    </div>
+    <div>
+      <span class="color-red">*</span><span class="padding-10">邮箱</span><input placeholder="请输入邮箱" class="fly-form-input">
+    </div>
+    <div>
+      <span class="color-red">*</span><span class="padding-10">城市</span>
+      <Select placeholder="请选择所在地" class="fly-form-select">
+        <Option value="beijing">北京市</Option>
+        <Option value="shanghai">上海市</Option>
+        <Option value="shenzhen">深圳市</Option>
+      </Select>
+    </div>
+    <div>
+      <span class="color-red">*</span><span class="padding-10">性别</span>
+      <input name="sex" type="radio">男
+      <input name="sex" type="radio">女
+    </div>
+    <div>
+      <span class="color-red">*</span><span class="padding-10">爱好</span>
+      <input type="checkbox">吃饭
+      <input type="checkbox">睡觉
+      <input type="checkbox">跑步
+      <input type="checkbox">看电影
+    </div>
+    <div>
+      <span class="color-red">*</span><span class="padding-10">介绍</span>
+      <textarea rows="4" cols="30" placeholder="请输入..." class="fly-form-textarea"></textarea>
+    </div>
+    <div style="text-align: center">
+      <div type="primary" class="fly-form-btn">提交</div>
+      <div type="ghost" class="fly-form-btn" style="margin-left: 1rem">重置</div>
+    </div>
+  </Form>
+</div>
+
+</body>
+</html>
+

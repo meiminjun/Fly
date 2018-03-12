@@ -1,0 +1,76 @@
+@charset "UTF-8";
+.fly-loading-box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: rgba(0, 0, 0, 0.21);
+  text-align: center;
+  font-size: 0.3rem;
+  padding: 0.3rem;
+  .fly-loading-pic{
+    width: 40%;
+    margin-bottom: 0.3rem;
+  }
+}
+
+// 加载更多
+.load-more {
+    height: 0.8rem;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.3rem;
+    color:#6c7684;
+}
+.load-more-money{
+    height: 1.74rem;
+}
+
+// 白色loading
+.pec-loading-mask {
+    position: fixed;
+    z-index:99999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0);
+}
+
+.pec-loading-wait {
+    position: fixed;
+    z-index: 30;
+    top: 50%;
+    left: 50%;
+    width: 2.00rem;
+    height: 2.00rem;
+    line-height: 1;
+    color: #FFFFFF;
+    font-size: 0.3rem;
+    text-align: center;
+    border-radius: .08rem;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    .icon-loading-wait {
+        width: .84rem;
+        height: .84rem;
+        display: block;
+        margin: .30rem auto;
+      //  background: url("#{$image-path}/icons/icon-toast-wait.gif") no-repeat;
+        background-size: 100% 100%;
+    }
+    .icon-loading-close {
+        position: absolute;
+        top: -.68rem;
+        right: -.68rem;
+        width: .44rem;
+        height: .44rem;
+        display: block;
+        border: .20rem solid transparent;
+      //  background: url("#{$image-path}/icons/icon-toast-close.png") no-repeat;
+        background-size: 100% 100%;
+        -webkit-box-sizing: initial;
+        box-sizing: initial;
+    }
+}

@@ -1,0 +1,317 @@
+@charset "UTF-8";
+
+body{background-color:$color-body;}
+
+// 头部默认样式
+.main-header {width:100%;height:0.84rem;}
+.main-header-wrap {
+    width:100%;height:0.84rem;position:fixed;top:0;left:0;right:0;z-index:$zIndex-head;background-color:#fff;border-bottom:1px solid $head-border;
+    .main-header-content {margin:0 auto;width:4.2rem;}
+    .main-header-left,.main-header-right {
+    	position:absolute;top:0;height:0.84rem;line-height:0.84rem;font-size:0.26rem;color:$header-primary;
+    }
+    .main-header-left{left:0.3rem;max-width:1.2rem;}
+    .main-header-right{right:0.3rem;display:block;max-width:1.4rem;text-align:right;}
+}
+.main-header-title {width:4.2rem;font-size:0.34rem;text-align:center;font-weight:normal;color:$header-primary;line-height:.84rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.main-header-title-2 {
+    padding-top:.1rem;
+    p {width:4.2rem;line-height:.36rem;text-align:center;font-weight:normal;color:$header-primary;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+}
+.main-header-tab {
+    display:flex;width:3.6rem; height:.5rem;line-height:.48rem;margin:.16rem auto 0;
+    .main-header-tab-list {
+        flex:1;font-size:.28rem;text-align:center;color:$header-primary;border:1px solid $header-primary;
+        &.active {
+            color:#fff;background-color:$header-primary;
+        }
+        &:first-child {border-radius:.08rem 0 0 .08rem;}
+        &:last-child {border-radius:0 .08rem .08rem 0;}
+    }
+}
+.header-text-link,.header-text-link:hover {color:$header-primary;}
+.main-header-back{
+    display: inline-block;
+    width:.5rem;
+    height:.84rem;
+    &:after{
+        position: absolute;
+        content: "";
+        display: block;
+        width: 0.2rem;
+        height: 0.2rem;
+        border-left: 0.04rem solid $header-primary;
+        border-bottom: 0.04rem solid $header-primary;
+        top: 0.30rem;
+        left:0.15rem;
+        @include transform(45deg);
+    }
+}
+.head-icon {
+    display:inline-block;
+    width:.6rem;
+    height:.84rem;
+    text-align:center;
+    vertical-align:top;
+    &:before {
+        display:inline-block;
+    }
+}
+.head-icon-search {
+    &:before {
+        padding-top:.21rem;
+        content:"\e6a6";
+        font-size:.42rem;
+        @include iconfont(.42rem, .42rem);
+    }
+}
+.head-icon-screen {
+    &:before {
+        padding-top:.24rem;
+        content:"\e611";
+        font-size:.42rem;
+        @include iconfont(.42rem, .42rem);
+    }
+}
+.head-icon-more {
+    &:before {
+        padding-top:.18rem;
+        content:"\e605";
+        font-size:.42rem;
+        @include iconfont(.42rem, .42rem);
+    }
+}
+
+.header-prdCode {padding-bottom:0.28rem;font-size:.24rem;background:#fff;color:$header-primary;text-align: center;}
+
+// 主题色背景头部
+.head-primary {
+    .header-prdCode {background:$header-primary;color:#fff;}
+    .main-header-wrap {background-color:$header-primary;border-bottom:1px solid $header-primary;}
+    .main-header-left,.main-header-right {color:#fff;}
+    .main-header-title,.main-header-title-2 p {color:#fff;}
+    .header-text-link,.header-text-link:hover {color:#fff;}
+    .main-header-back:after {border-color:#fff;}
+    .main-header-tab {
+        .main-header-tab-list {
+            color:#fff;border:1px solid #fff;
+            &.active {
+                color:$header-primary;background-color:#fff;
+            }
+        }
+    }
+}
+
+// 页脚
+.page-foot {padding: 0.3rem 0;background-color:$color-body;}
+.page-foot p {color:#B2B2B2;text-align:center;font-size:0.26rem;}
+
+// table卡片布局
+.lib-card-list{background-color:#fff;}
+.lib-card-head {
+    height:0.90rem;
+    padding:0 0.4rem;
+    @include table();
+    position:relative;
+    border-bottom:1px solid $color-border;
+    .div-td {display:table-cell;vertical-align:middle;}
+}
+.lib-card-head-title {
+    display:table-cell;
+    color:$lib-card-head-title;
+    font-size: 0.30rem;
+    text-align:left;
+    vertical-align: middle;
+    }
+.lib-card-head-end{
+    display:table-cell;
+    font-size:0.24rem;
+    text-align:right;
+    vertical-align: middle;
+
+}
+.lib-card-list-text {
+    padding:0 0.4rem;color:$color-tips;font-size:0.24rem;
+    @include table();
+    .left,.right,.div-td {display:table-cell;vertical-align:top;font-size:0.28rem;}
+    .right {text-align:right;}
+    .tip {color:$color-primary;}
+}
+.lib-card-list-item{
+    padding:0.3rem 0.4rem;
+    border-top:1px solid $color-border;
+    border-bottom:1px solid $color-border;
+    background:#fff;
+    @include table();
+    .left,.right,.div-td {display:table-cell;vertical-align:middle;font-size:0.26rem;position:relative;}
+}
+
+
+// 排列布局
+.lib-auto-list-box {
+    background-color:#fff;
+}
+.lib-auto-list{
+    @include clearfix();
+}
+.lib-auto-list-item{
+    float:left;font-size:0.3rem;
+    .lib-auto-list-tip {float:right;}
+}
+
+// flex布局
+.lib-flex-box {background-color:#fff;}
+.lib-flex-head,.lib-flex-list{
+    @include flexbox();
+    min-height:.9rem;
+}
+.lib-flex-item,.lib-flex-list-auto,.lib-flex-list-right {
+    @include flexbox();
+    @include flex-items(center);
+    font-size:.3rem;
+}
+.lib-flex-item {
+    max-width:80%;
+}
+.lib-flex-list-auto,.lib-flex-list-right {
+    @include flex(1);
+}
+.lib-flex-list-right {
+    @include flex-justify(flex-end);
+}
+.lib-flex-tips {
+    @include flexbox();
+    .lib-flex-text {
+        @include flex(1);
+    }
+}
+
+
+// 提示框
+.pagetip {
+    position: fixed;top:0;right:0;bottom:0;left:0;
+    .pagetip-cont {background-color:rgba(0,0,0,0.6);border-radius:0.08rem;padding:0.4rem 0.3rem;position:absolute;z-index:100;left: 50%;top: 50%;
+    transform: translate(-50%,-50%);font-size:0.3rem;color:#fff;width:5rem;text-align:center;}
+}
+
+
+// 风测样式
+#riskMask-bg{ display:none;position: fixed;width: 100%;height: 100%;background: rgba(0,0,0,0.6);z-index: 9999;top:0 }
+#riskMask-cont{display:none;position: fixed;z-index: 10000;background: #FFF;width: 6rem;min-height: 2.5rem;top: 5rem;left: 0.77rem;border-radius: 0.1rem;}
+#riskMask-p{text-align: center;font-size: 0.32rem;padding: 0.35rem 0.2rem 0 0.2rem;margin:0 0 1.3rem 0;line-height: 1.5; }
+#riskMask-btnBox{display: flex;display: -webkit-flex;position: absolute;width: 100%;height: 1rem;line-height: 1rem;bottom: 0;font-size: 0.32rem;border-top: 1px solid #d8d8d8;color: #929292;}
+.riskMask-btn{flex: 1;-webkit-box-flex: 1; -webkit-flex: 1;text-align: center;}
+.riskMask-btn2{flex: 1;-webkit-box-flex: 1; -webkit-flex: 1;text-align: center; color:#ff662a; border-left:1px solid #d8d8d8}
+
+// 规则样式
+.rule-box {
+    padding:0 0.4rem;
+    background: $color-main;
+    dl {
+        padding:0.2rem 0;
+        &:not(:first-child){
+            border-top:1px solid $color-e7;
+        }
+
+        dt {
+            padding-bottom: .15rem;
+            font-size: .34rem;
+            color: $black-light;
+        }
+        dd {
+            font-size: .3rem;
+            color: $font-gray;
+            line-height: .45rem;
+        }
+        p {
+            @include flexbox();
+            .txt-dt{white-space:nowrap;}
+            .txt-de{@include flex(1);}
+        }
+        .disc{
+            margin-right: .1rem;
+            display: inline-block;
+            height: 0.34rem;
+            line-height: .3rem;
+            width: 0.34rem;
+            font-size: .28rem;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+    }
+}
+
+//tab 导航
+.lib-flex-tab-area {
+  height: 0.8rem;
+}
+.lib-flex-tab-nav {
+	width: 100%;
+  height: 0.8rem;
+  background: $white;
+  &.pos-fixed {
+    position: fixed;
+    // top: 0.84rem;
+    z-index: 102;
+    left: 0;
+    right: 0;
+  }
+	ul {
+		@include flexbox();
+		li {
+			@include flex(1);
+			font-size: .3rem;
+			height: 0.8rem;
+			line-height: 0.8rem;
+			text-align: center;
+			border-bottom: 1px solid $color-border;
+			&.active {
+        border-bottom: 0.04rem solid $primary-br;
+        color: $primary-font;
+        .lib-flex-tab-nav-more {
+          color: $primary-font;
+        	.card-arrow-bottom {
+        		&:after {
+              color: $primary-font;
+            }
+        	}
+        }
+      }
+		}
+	}
+}
+.lib-flex-tab-nav.aldweb{
+	top: 0;
+}
+.lib-flex-tab-nav-more {
+	position: relative;
+	display: inline-block;
+	padding-right: 0.4rem;
+	color: $black-light;
+	.card-arrow-bottom {
+		&:after {
+      border-color: $black-light;
+      color: $color-6;
+    }
+	}
+}
+
+.lib-card-tip-text {
+    position: relative;
+	font-size: .28rem;
+	padding: .2rem .4rem;
+	background-color: #fffbf4;
+	border-top: 1px solid #ffe8dc;
+	border-bottom: 1px solid #ffe8dc;
+	color: $color-primary;
+}
+
+// 底部提示文案
+.lib-bottom-tips {
+    line-height: .36rem;
+    font-size: .26rem;
+    color: $color-b2;
+    padding: 0 .4rem;
+}
+

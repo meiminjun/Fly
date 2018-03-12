@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+
+.card-arrow-up,.card-arrow-right,.card-arrow-bottom,.card-arrow-down,.card-arrow-left {
+    display: inline-block;
+    width:.3rem;
+    height:.5rem;
+    position:absolute;
+    right:0;top:50%;
+    margin-top:-0.25rem;
+    &:after{
+        position:absolute;
+        content: "\e61b";
+        font-size:0.4rem;
+        @include iconfont(0.3rem,0.5rem);
+        color:$color-arrow;
+        right:0;
+        top:50%;
+        margin-top:-0.25rem;
+    }
+}
+.card-arrow-up {
+    &:after {}
+}
+.card-arrow-right {
+    &:after {
+        text-align:right;
+    }
+}
+.card-arrow-bottom {
+    &:after {
+        @include transform(90deg);
+        margin-top:-0.3rem;
+    }
+}
+.card-arrow-down {
+    &:after {
+        @include transform(90deg);
+        margin-top:-0.3rem;
+    }
+}
+.card-arrow-left {
+    &:after {}
+}
+
+.after-arrow-up,.after-arrow-right,.after-arrow-bottom,.after-arrow-down,.after-arrow-left {
+    position: relative;padding-right:0.4rem;
+    &:after{
+        position:absolute;
+        content: "\e61b";
+        font-size:0.4rem;
+        @include iconfont(0.3rem,0.5rem);
+        color:$color-arrow;
+        right:0;
+        top:50%;
+        margin-top:-0.25rem;
+    }
+}
+.after-arrow-up {
+    &:after {
+        @include transform(-90deg);
+    }
+}
+.after-arrow-right {
+    &:after {text-align:right;}
+}
+.after-arrow-bottom {
+    &:after {
+        @include transform(90deg);
+        margin-top:-0.3rem;
+    }
+}
+.after-arrow-down {
+    &:after {
+        @include transform(90deg);
+        margin-top:-0.3rem;
+    }
+}
+.after-arrow-left {
+    &:after {}
+}
+
+.icon-i{
+    display:inline-block;
+    width: 0.25rem;
+    height:0.25rem;
+    border-radius:50%;
+    background-color:$org;
+    position: relative;
+    top: 2px;
+    &:before{
+        content:'';
+        display:block;
+        width: 0.09rem;
+        height: 0.15rem;
+        margin:0.05rem auto 0;
+       // background:url("#{$image-path}/icons/icon-i.png") no-repeat center center;
+        background-size: 0.09rem auto;
+    }
+    &:after {
+        content:'';
+        position:absolute;
+        left:-.06rem;
+        top:-.06rem;
+        width: .4rem;
+        height:.4rem;
+        background:rgba(255, 255, 255, 0);
+    }
+    .icon-i-tip {
+        position: absolute;top:.4rem;left:50%;transform:translateX(-50%);padding:0.15rem 0.3rem;line-height:1.15;
+        background-color:rgba(0, 0, 0, 0.8);
+        border-radius:0.08rem;
+        z-index:10;
+        color:#fff;
+        font-size:0.3rem;
+        word-wrap:break-word;word-break:normal;
+        display:none;
+        max-width:4rem;
+        &:before {
+            @include triangle(top,0.12rem,rgba(0, 0, 0, 0.8));position: absolute;top:-0.12rem;left:50%;transform:translateX(-50%);
+        }
+    }
+    &.active {
+        .icon-i-tip {
+            display:block;
+        }
+    }
+}

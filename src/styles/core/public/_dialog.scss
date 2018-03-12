@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+.fly-dialog-layout {position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.2);z-index:101;}
+.fly-dialog-box{
+  width: 85%;
+  height: 6rem;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 0.1rem;
+  z-index: 101;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	-moz-transform: translate(-50%,-50%);
+	-o-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+  .fly-dialog-header{
+    font-size: 0.4rem;
+    padding: 0.3rem;
+    text-align: center;
+    color: $dialog-title;
+    border-bottom: 1px solid $dialog-br;
+  }
+  .fly-dialog-content{
+    padding:0.2rem 0.4rem;
+    font-size: 0.35rem;
+  }
+  .fly-dialog-botton {
+    position: absolute;
+    bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+    display: box;
+    display: -moz-box;
+    display: -webkit-box;
+    box-pack: center;
+    -moz-box-pack: center;
+    -webkit-box-pack: center;
+    box-align: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .fly-dialog-btn{
+      flex: 1;
+      a{
+        padding: 0.1rem 0.6rem;
+        font-size:0.36rem;
+        color:$btn-font-color;
+        background-color:$btn-bg-color;
+        text-align:center;
+        border-radius:0.08rem;
+        &:hover,&:active {
+          color:$btn-font-color;
+        }
+      }
+    }
+  }
+}
+.dialog-old-bottom {
+  align-self: flex-end;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  border-top: 1px solid $color-e7;
+  .dialog-col {
+    display: table-cell;
+    padding: .3rem;
+    box-sizing: border-box;
+    font-size: .3rem;
+    color: $color-6;
+    text-align: center;
+  }
+  .btn {
+    background-color: transparent;
+    border-radius: 0;
+    flex: 1;
+  }
+  .btn-cancel {
+    border-bottom-left-radius: .1rem;
+    border-right: 1px solid $color-e7;
+    color: $color-9;
+  }
+  .btn-confirm {
+    border-bottom-right-radius: .1rem;
+    color: $color-primary;
+  }
+}
+
+/*推荐人*/
+.tujian-dialog {
+    .dialog-title {
+		border-bottom: 0;
+		padding-top: 0.6rem;
+		padding-bottom: 0;}
+    .tujian-dialog-input {
+        // padding: 0.6rem 0;
+        input {
+			width: 5rem;
+			height: .88rem;
+			border: 1px solid $color-b2;
+			border-radius: 0.08rem;
+			font-size: 0.3rem;
+			padding: 0.1rem;
+		}
+    }
+	.tips-text {
+		line-height: .4rem;
+		font-size: .26rem;
+		color: $color-6;
+	}
+}
+
+/* 推荐人-带下拉输入提示 */
+.dialog-recommend-box {
+    .dialog-title {
+        border-bottom: 0;
+        padding: .6rem .3rem 0;
+    }
+    .dialog-body {
+        min-height: 2.5rem;
+        padding: .5rem .4rem .3rem;
+    }
+    .dialog-recommend-input {
+        .ipt {
+            display: block;
+            width: 100%;
+            height: .88rem;
+            border: 1px solid $color-b2;
+            border-radius: .08rem;
+            font-size: .3rem;
+            padding: .1rem;
+        }
+    }
+    .dialog-recommend-input-pop {
+        width: 100%;
+        border: 1px solid $color-b2;
+        border-radius: .08rem;
+        padding: .1rem .2rem;
+        margin-top: -1px;
+        li {
+            line-height: .5rem;
+            font-size: .3rem;
+            color: $color-font;
+        }
+    }
+}
+.tj-dialog {
+	.dialog-body {
+		&.dialog-recommend-body {
+			min-height: 2.5rem;
+			padding: .5rem .4rem .3rem;
+		}
+	}
+	.dialog-recommend-input {
+		.ipt {
+			display: block;
+			width: 100%;
+			height: .88rem;
+			border: 1px solid $color-b2;
+			border-radius: .08rem;
+			font-size: .3rem;
+			padding: .1rem;
+		}
+	}
+	.dialog-recommend-input-pop {
+		width: 100%;
+		border: 1px solid $color-b2;
+		border-radius: .08rem;
+		padding: .1rem .2rem;
+		margin-top: -1px;
+		li {
+			line-height: .5rem;
+			font-size: .3rem;
+			color: $color-font;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+	}
+}

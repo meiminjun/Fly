@@ -1,0 +1,76 @@
+.fly-button-source{
+  padding: 7px 0;
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin: 20px 0;
+  .fly-button-sytle{
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 4px;
+    background: #fff;
+    border: 1px solid #bfcbd9;
+    text-align: center;
+    line-height: 1;
+    margin-left: 10px;
+    outline:0
+  }
+  .fly-button-row{
+    display: block;
+    width: 94%;
+    margin: 10px auto;
+  }
+  .fly-button-primary{
+    color: #fff;
+    background-color: #20a0ff;
+    border-color: #20a0ff;
+  }
+  .fly-button-text{
+    border: none;
+    color: #20a0ff;
+    background: transparent;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .disabled{
+    background-color: #fff;
+    border-color: #d1dbe5;
+    color: #bfcbd9;
+  }
+  .fly-button-item{
+    height: 35px;
+    width: 35px;
+  }
+  .fly-button-item1{
+    height: 35px;
+    width: 80px;
+    padding-left: 34px;
+    color: #20a0ff;
+  }
+  .fly-button-edit{
+    background: url(../../../assets/images/components/edit.png) no-repeat;
+    background-size: 24px;
+    background-position: 50%;
+
+  }
+  .fly-button-share{
+    background: url(../../../assets/images/components/share.png) no-repeat;
+    background-size: 24px;
+    background-position: 50%;
+
+  }
+  .fly-button-delete{
+    background: url(../../../assets/images/components/delete.png) no-repeat;
+    background-size: 24px;
+    background-position: 50%;
+  }
+  .fly-button-search{
+    background: url(../../../assets/images/components/search.png) no-repeat;
+    background-size: 24px;
+    background-position: 15%;
+  }
+  .fly-button-upload{
+    background: url(../../../assets/images/components/upload.png) no-repeat;
+    background-size: 24px;
+    background-position: 15%;
+  }
+}

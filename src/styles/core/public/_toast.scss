@@ -1,0 +1,44 @@
+@charset "UTF-8";
+.dn{
+  display: none;
+}
+.fly-toast-box{
+  padding: 0 20px;
+  top: 50%;
+  position: absolute;
+  width: 100%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  font-size: 0.4rem;
+  .fly-toast-botton{
+    color: #656b79;
+    background-color: #f6f8fa;
+    box-shadow: 0 0 5px #b8bbbf;
+    margin-bottom: 20px;
+    height: 1rem;
+    line-height: 1rem;
+    text-align: center;
+  }
+}
+.fly-toast-promptInfo{
+  padding: 10px 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 0.4rem;
+  border-radius: 5px;
+  .fly-toast-promptIcon{
+    width: 100%;
+  }
+  .fly-toast-promptContent{
+    text-align: center;
+  }
+}
+.fly-toast-position{
+  top: 78%;
+}
+

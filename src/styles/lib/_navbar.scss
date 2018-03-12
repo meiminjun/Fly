@@ -1,0 +1,48 @@
+.dn{
+  display: none;
+}
+.fly-navbar-tabs{
+  height: 0.9rem;
+  line-height: 0.9rem;
+  display: box;
+  display: -moz-box;
+  display: -webkit-box;
+  box-pack: center;
+  -moz-box-pack: center;
+  -webkit-box-pack: center;
+  box-align: center;
+  -moz-box-align: center;
+  -webkit-box-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.3rem;
+  background: #fff;
+  li{
+    -webkit-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    text-align: center;
+  }
+  .action{
+    border-bottom: 2px solid blue;
+  }
+}
+
+.fly-navbar-content{
+  background: #fff;
+  ul{
+    margin-top: 0.3rem;
+    border-top: 1px solid #ccc;
+    li{
+      width: 90%;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      margin: 0 auto;
+      font-size: 0.34rem;
+    }
+  }
+}
+
+

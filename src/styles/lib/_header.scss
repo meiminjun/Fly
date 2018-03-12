@@ -1,0 +1,33 @@
+$mei-color-52C9C1:#52C9C1;
+$mei-color-FFFFFF:#FFFFFF;
+
+.header {
+  max-width: 100%;
+  margin: 0 auto;
+  height: 0.88rem;
+  background-color: $mei-color-52C9C1 !important;
+  color: $mei-color-FFFFFF !important;
+  line-height: 0.88rem;
+  text-align: center;
+  position: relative;
+  span {
+    font-size: 0.36rem;
+  }
+  a {
+    color:$mei-color-FFFFFF !important;
+  }
+  .left {
+    position: absolute;
+    top: 0;
+    left: 0.30rem;
+    font-size: 0.3rem;
+    color: $mei-color-FFFFFF;
+  }
+  .right {
+    position: absolute;
+    top: 0;
+    right: 0.30rem;
+    font-size: 0.3rem;
+    color: $mei-color-FFFFFF;
+  }
+}

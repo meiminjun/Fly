@@ -1,0 +1,171 @@
+* {box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;}
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,blockquote,th,td,p{margin:0;padding:0}
+input,button,select,textarea,button:focus,input:focus,textarea:focus,select:focus,a:focus,li:focus,span:focus,i:focus,img:focus,summary{outline:0}
+body{background-attachment:fixed;}
+ol,ul,li,summary{list-style:none}
+img{vertical-align:middle;}
+button,fieldset,img{border:0;}
+textarea{overflow:auto;vertical-align:top;resize:none}
+body,input,textarea,select,button{font-family:$font-fy;color:$font-body;}
+em,i{font-style:normal}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+table{border-collapse:collapse;border-spacing:0}
+a,a:active,a:hover{text-decoration:none;color:$font-gray;}
+html,body,button{-webkit-text-size-adjust:none;-webkit-touch-callout:none;}
+a,button,input,textarea{-webkit-tap-highlight-color:transparent}
+mark{background-color:transparent;}
+input[type=text],input[type=submit],button,textarea{-webkit-appearance:none}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {color:#e7e7e7;}
+input:-moz-placeholder, textarea:-moz-placeholder {color: #e7e7e7;}
+input::-moz-placeholder, textarea::-moz-placeholder {color: #e7e7e7;}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {color: #e7e7e7;}
+q:before,q:after{content:"";}
+
+.clearfix:after{content:"";display:block;clear:both;visibility:hidden;height:0}
+.fl{float:left}
+.fr{float:right}
+.por{position:relative}
+.poa{position:absolute}
+.dsn,.dn{display:none}
+.dib{display:inline-block !important;}
+.tal{text-align:left !important;}
+.tar{text-align:right !important;}
+.tac{text-align:center !important;}
+.fwn{font-weight:normal !important;}
+.fwb{font-weight:bold !important;}
+.vat{vertical-align:top !important;}
+.vam{vertical-align:middle !important;}
+.vab{vertical-align:bottom !important;}
+.mt0 {margin-top:0 !important;}
+.mr0 {margin-right:0 !important;}
+.mb0 {margin-bottom:0 !important;}
+.ml0 {margin-left:0 !important;}
+.pt0 {padding-top:0 !important;}
+.pr0 {padding-right:0 !important;}
+.pb0 {padding-bottom:0 !important;}
+.pl0 {padding-left:0 !important;}
+.nbr {border:0 !important;}
+.nbr-t {border-top:0 !important;}
+.nbr-r {border-right:0 !important;}
+.nbr-b {border-bottom:0 !important;}
+.nbr-l {border-left:0 !important;}
+
+// 字体颜色
+.c_blue,.c-blue {color:$blue !important;}
+.c_org,.c-org  {color:$org !important;}
+.c_red,.c-red {color:$red !important;}
+.c_green,.c-green {color:$green !important;}
+.c_primary,.c-primary {color:$color-primary !important;}
+.c_9,.c-9 {color:$color-9 !important;}
+.c_6,.c-6 {color:$color-6 !important;}
+.c_b2,.c-b2 {color:$color-b2 !important;}
+.c_1e,.c-1e {color:$black-light !important;}
+.bg-white{background-color:#fff;}
+
+.f24 {font-size:.24rem !important;}
+.f26 {font-size:0.26rem !important;}
+.f28 {font-size:0.28rem !important;}
+.f30 {font-size:0.3rem !important;}
+.f34 {font-size:0.34rem !important;}
+.f36{font-size: .36rem!important}
+.f38 {font-size:0.38rem !important;}
+.f40 {font-size:0.4rem !important;}
+.f45 {font-size:0.45rem !important;}
+.f50 {font-size:0.5rem !important;}
+.f55 {font-size:0.55rem !important;}
+
+.top-0 {top:0 !important;}
+
+// 间距
+.mt10{margin-top:.1rem !important;}
+.mt15{margin-top: .15rem !important;}
+.mt20{margin-top:.2rem !important;}
+.mt25{margin-top:.25rem !important;}
+.mt30{margin-top:.3rem !important;}
+.mt40{margin-top:.4rem !important;}
+.mt50{margin-top:.5rem !important;}
+.mt1r{margin-top:1rem !important;}
+.mt150{margin-top: 1.5rem !important;}
+.mt190{margin-top: 1.9rem !important;}
+.mt300{margin-top: 3rem !important;}
+.t270{top:2.7rem !important;}
+.t186{top:1.86rem !important;}
+
+.mr10{margin-right:.1rem !important;}
+.mr20{margin-right:.2rem !important;}
+.mr30{margin-right:.3rem !important;}
+.mr40{margin-right:.4rem !important;}
+
+.ml10{margin-left:.1rem !important;}
+.ml20{margin-left:.2rem !important;}
+.ml30{margin-left:.3rem !important;}
+.ml40{margin-left:.4rem !important;}
+
+.mb10{margin-bottom:.1rem !important;}
+.mb20{margin-bottom:.2rem !important;}
+.mb30{margin-bottom:.3rem !important;}
+.mb40{margin-bottom:.4rem !important;}
+.mb60{margin-bottom:.6rem !important;}
+.mb150 {margin-bottom:1.5rem !important;}
+.mb190 {margin-bottom:1.9rem !important;}
+.mb300 {margin-bottom:3rem !important;}
+.largeLength{margin-left: -.1rem;}
+
+.pt10{padding-top:.1rem !important;}
+.pt20{padding-top:.2rem !important;}
+.pt25{padding-top:.25rem !important;}
+.pt30{padding-top:.3rem !important;}
+.pt40{padding-top:.4rem !important;}
+.pt50{padding-top:.5rem !important;}
+.pt1r{padding-top:1rem !important;}
+
+.pr10{padding-right:.1rem !important;}
+.pr20{padding-right:.2rem !important;}
+.pr30{padding-right:.3rem !important;}
+.pr40{padding-right:.4rem !important;}
+.pr50{padding-right:.5rem !important;}
+
+.pb10{padding-bottom:.1rem !important;}
+.pb20{padding-bottom:.2rem !important;}
+.pb30{padding-bottom:.3rem !important;}
+.pb40{padding-bottom:.4rem !important;}
+
+.pl10{padding-left:.1rem !important;}
+.pl20{padding-left:.2rem !important;}
+.pl30{padding-left:.3rem !important;}
+.pl40{padding-left:.4rem !important;}
+.pl50{padding-left:.5rem !important;}
+.pl60{padding-left:.6rem !important;}
+.pl70{padding-left:.7rem !important;}
+.pl80{padding-left:.8rem !important;}
+.pl90{padding-left:.9rem !important;}
+.pl100{padding-left:1rem !important;}
+
+.break-word { word-wrap: break-word; line-height: 1.2;}
+.ellipsis{display:block !important;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mask{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.2);z-index:99}
+.main-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-color: #000;
+  z-index: 999;
+}
+.delete-line {text-decoration:line-through;}
+.scroller-box,.scroller-x{overflow-x: scroll;-webkit-overflow-scrolling:touch;}
+.scroller-y {overflow-y: scroll;-webkit-overflow-scrolling:touch;}
+.scroller-x::-webkit-scrollbar,
+.scroller-y::-webkit-scrollbar,
+.scroller-box::-webkit-scrollbar{display:none;}
+.touch {-webkit-overflow-scrolling:touch;}
+.pof{width: 100%;position: fixed; z-index: 9; bottom: 0;left: 0;background-color:#fff;}
+.ftw_6 {width:2.5rem !important;}
+.ftw_5 {width:2.15rem !important;}
+.ftw_3 {width:1.5rem !important;}
+.ftw_2 {width:1.15rem !important;}
+
+.w400 {width: 4rem !important;}
+.w500 {width: 5rem !important;}

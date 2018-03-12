@@ -1,0 +1,112 @@
+@charset "UTF-8";
+// @include hidden
+@mixin hidden {
+	display:none!important;
+	visibility:hidden;
+}
+
+@mixin table {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+}
+@mixin table-cell {
+  display:table-cell;
+  vertical-align:middle;
+}
+
+// @include clearfix
+@mixin clearfix {
+  &:after {
+  	content:"";
+  	display:table;
+  	clear:both;
+  }
+}
+
+
+// @include img2x("../images/img-2x.png", 200px, 200px);
+@mixin img2x($url, $width, $height) {
+    background-image: url('#{$url}');
+    background-size: $width $height;
+}
+
+//三角形模板 @include triangle(left,13px,#fff)
+%triangle-basic{content:"";height: 0;width: 0;overflow:hidden;}
+@mixin triangle($direction, $size, $borderColor ) {
+  @extend %triangle-basic;
+  @if $direction == top {
+    border-bottom:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == right {
+    border-left:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  } 
+  @else if $direction == bottom {
+    border-top:$size solid $borderColor;
+    border-left:$size dashed transparent;
+    border-right:$size dashed transparent;
+  } 
+  @else if $direction == left {
+    border-right:$size solid $borderColor;
+    border-top:$size dashed transparent;
+    border-bottom:$size dashed transparent;
+  }
+}
+
+/*
+关闭按钮 
+@include btn-close(".close" ,1rem ,2px ,#f00);
+.close {}
+*/
+@mixin btn-close($name, $width, $size, $color) {
+  #{$name} {position:relative;display:inline-block;width:$width;height:$width;}
+  #{$name}:before ,#{$name}:after {
+    content:"";
+    display:inline-block;
+    width:$width/1.2;
+    height:$size;
+    background-color:$color;
+    position:absolute;
+    top:49%;
+    left:50%;
+    margin-left:-$width/2.4;
+  }
+  #{$name}:before {
+    transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    -ms-transform:rotate(45deg);  /* IE 9 */
+    -moz-transform:rotate(45deg); /* Firefox */
+    -o-transform:rotate(45deg);   /* Opera */
+  }
+  #{$name}:after {
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);
+    -ms-transform:rotate(-45deg);   /* IE 9 */
+    -moz-transform:rotate(-45deg);  /* Firefox */
+    -o-transform:rotate(-45deg);  /* Opera */
+  }
+}
+
+// iconfont图标
+@font-face {
+  font-family: 'iconfont';
+  src: url('#{$path-font}/iconfont-new.eot');
+  src: url('#{$path-font}/iconfont-new.eot?#iefix') format('embedded-opentype'),
+  url('#{$path-font}/iconfont-new.woff') format('woff'),
+  url('#{$path-font}/iconfont-new.ttf') format('truetype'),
+  url('#{$path-font}/iconfont-new.svg#iconfont') format('svg');
+}
+// @include iconfont(0.5rem,0.5rem);
+@mixin iconfont($width, $height) {
+  font-family:"iconfont" !important;
+  font-style:normal;
+  width:$width;
+  height:$height;
+  line-height:$height;
+  text-align:center;
+  overflow:hidden;
+}

@@ -1,0 +1,208 @@
+@charset "UTF-8";
+// 旋转
+@mixin transform($deg) {
+	transform:rotate($deg);
+	-ms-transform:rotate($deg); 	/* IE 9 */
+	-moz-transform:rotate($deg); 	/* Firefox */
+	-webkit-transform:rotate($deg); /* Safari 和 Chrome */
+	-o-transform:rotate($deg); 	/* Opera */
+}
+
+// @include radius()
+@mixin radius($Num) {
+    -webkit-border-radius:$Num;
+    -moz-border-radius:$Num;
+    border-radius:$Num;
+}
+// @include background-size()
+@mixin bg-size($size) {
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+// @include opacity
+@mixin opacity($opacity) {
+    -moz-opacity: $opacity / 100;
+    -khtml-opacity:$opacity / 100;
+    opacity: $opacity / 100;
+}
+
+// flex片段
+@mixin flexbox() {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+// 横竖排列方式: row | row-reverse | column | column-reverse
+@mixin flex-direction($value) {
+  @if $value == row {
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction:$value;
+    -moz-flex-direction:$value;
+    -ms-flex-direction:$value;
+    -o-flex-direction:$value;
+    flex-direction:$value;
+  }
+  @if $value == column {
+    -webkit-box-orient: vertical;
+    -webkit-flex-direction:$value;
+    -moz-flex-direction:$value;
+    -ms-flex-direction:$value;
+    -o-flex-direction:$value;
+    flex-direction:$value;
+  }
+  @if $value == row-reverse {
+    -webkit-flex-direction:$value;
+    -moz-flex-direction:$value;
+    -ms-flex-direction:$value;
+    -o-flex-direction:$value;
+    flex-direction:$value;
+  }
+  @if $value == column-reverse {
+    -webkit-flex-direction:$value;
+    -moz-flex-direction:$value;
+    -ms-flex-direction:$value;
+    -o-flex-direction:$value;
+    flex-direction:$value;
+  }
+}
+
+
+// 是否换行: nowrap | wrap | wrap-reverse
+@mixin flex-wrap($value) {
+  -webkit-flex-wrap:$value;
+  -moz-flex-wrap:$value;
+  -ms-flex-wrap:$value;
+  -o-flex-wrap:$value;
+  flex-wrap:$value;
+}
+
+// 主轴对齐方式: flex-start | flex-end | center | space-between | space-around
+@mixin flex-justify($value) {
+  @if $value == flex-start {
+    -webkit-box-pack:start;
+    -moz-box-pack:start;
+    -ms-flex-pack:start;
+    -webkit-justify-content:$value;
+    -moz-justify-content:$value;
+    -ms-justify-content:$value;
+    -o-justify-content:$value;
+    justify-content:$value;
+  }
+  @if $value == flex-end {
+    -webkit-box-pack:end;
+    -moz-box-pack:end;
+    -ms-flex-pack:end;
+    -webkit-justify-content:$value;
+    -moz-justify-content:$value;
+    -ms-justify-content:$value;
+    -o-justify-content:$value;
+    justify-content:$value;
+  }
+  @if $value == center {
+    -webkit-box-pack:center;
+    -moz-box-pack:center;
+    -ms-flex-pack:center;
+    -webkit-justify-content:$value;
+    -moz-justify-content:$value;
+    -ms-justify-content:$value;
+    -o-justify-content:$value;
+    justify-content:$value;
+  }
+  @if $value == space-between {
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -ms-flex-pack:justify;
+    -webkit-justify-content:$value;
+    -moz-justify-content:$value;
+    -ms-justify-content:$value;
+    -o-justify-content:$value;
+    justify-content:$value;
+  }
+  @if $value == space-around {
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -ms-flex-pack:justify;
+    -webkit-justify-content:$value;
+    -moz-justify-content:$value;
+    -ms-justify-content:$value;
+    -o-justify-content:$value;
+    justify-content:$value;
+  }
+}
+
+// 侧轴对齐方式: flex-start | flex-end | center | baseline | stretch
+@mixin flex-items($value) {
+  @if $value == flex-start {
+    -webkit-box-align:start;
+    -moz-box-align:start;
+    -webkit-align-items:$value;
+    -moz-align-items:$value;
+    -ms-align-items:$value;
+    align-items:$value;
+  }
+  @if $value == flex-end {
+    -webkit-box-align:end;
+    -moz-box-align:end;
+    -webkit-align-items:$value;
+    -moz-align-items:$value;
+    -ms-align-items:$value;
+    align-items:$value;
+  }
+  @if $value == center {
+    -webkit-box-align:center;
+    -moz-box-align:center;
+    -webkit-align-items:$value;
+    -moz-align-items:$value;
+    -ms-align-items:$value;
+    align-items:$value;
+  }
+  @if $value == baseline {
+    -webkit-box-align:baseline;
+    -moz-box-align:baseline;
+    -webkit-align-items:$value;
+    -moz-align-items:$value;
+    -ms-align-items:$value;
+    align-items:$value;
+  }
+  @if $value == stretch {
+    -webkit-box-align:stretch;
+    -moz-box-align:stretch;
+    -webkit-align-items:$value;
+    -moz-align-items:$value;
+    -ms-align-items:$value;
+    align-items:$value;
+  }
+}
+
+// 容器内容对齐方式: flex-start | flex-end | center | space-between | space-around | stretch
+@mixin flex-align($value) {
+  -webkit-align-content:$value;
+  -moz-align-content:$value;
+	-ms-align-content:$value;
+	align-content:$value;
+}
+
+// 容器内容伸缩: auto (1 1 auto) 和 none (0 0 auto)
+@mixin flex($values) {
+  -webkit-box-flex:$values;
+  -moz-box-flex:$values;
+  width: 20%;
+  -webkit-flex:$values;
+  -ms-flex:$values;
+  flex:$values;
+  max-width: 100%;
+}
+
+// 用整数值来定义排列顺序，数值小的排在前面。可以为负值
+@mixin flex-order($val) {
+  -webkit-box-ordinal-group:$val;  
+  -moz-box-ordinal-group: $val;     
+  -ms-flex-order:$val;     
+  -webkit-order:$val;  
+  order:$val;
+}

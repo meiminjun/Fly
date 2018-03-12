@@ -1,0 +1,15 @@
+@charset "UTF-8";
+// 输入框
+@mixin input($width, $height, $size) {
+	width:$width;
+	height:$height;
+	line-height:$height;
+	border-radius:$size;
+	color:$input-font-color;
+	background-color:$input-bg-color;
+	border:$border-width solid $input-br-color;
+	padding:0px .1rem;
+	&:focus {
+		border-color:$input-br-focus;
+	}
+}
