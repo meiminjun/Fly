@@ -14,7 +14,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     filename: 'fly.js',
     library: 'fly',
     libraryTarget: 'umd',
-    // umdNamedDefine: true
+    umdNamedDefine: true
   },
   plugins: [
     new ExtractTextPlugin('fly.css') // 分离css的地址

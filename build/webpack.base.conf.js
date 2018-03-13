@@ -1,7 +1,7 @@
 const path = require('path') // 导入路径包
 const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+// const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 不能用这个
 const env = process.env.NODE_ENV
 const isProduction = env === 'production'
 
@@ -55,7 +55,7 @@ const vueCssLoaders = function (options) {
 }
 
 let config = {
-  devtool: isProduction ? 'none' : 'eval',
+  devtool: isProduction ? 'none' : '#eval-source-map',
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.vue', '.jsx', '.json', '.scss'],
     alias: {
@@ -114,6 +114,11 @@ let config = {
         }
       },
       {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         query: {
@@ -123,10 +128,19 @@ let config = {
     ]
   },
   plugins: isProduction ? [
-    new UglifyJsPlugin({
-      cache: true, // 是否启用缓存
-      parallel: true // 启用并发
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true,
+      sourceMap: false,
+      mangle: true,
+      compress: {
+        warnings: false
+      }
     }),
+    // new UglifyJsPlugin({ // 这个有坑，会造成找不到组件 vue 中的 name 为""
+    //   cache: false, // 是否启用缓存
+    //   parallel: true // 启用并发
+    // }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(env)
     })

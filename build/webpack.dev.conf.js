@@ -12,9 +12,7 @@ function resolve(dir) {
 
 var entry = fs.readdirSync(path.join(__dirname, '..', 'src/pages/')).reduce((entryObj, dir) => {
   const fullDir = path.join(__dirname, '..', 'src/pages/' + dir)
-  console.log(entryObj)
-  const entry = path.join(fullDir, 'index.ts')
-  console.log(fs.statSync(fullDir).isDirectory())
+  const entry = path.join(fullDir, 'index.js')
   if (fs.statSync(fullDir).isDirectory() && fs.existsSync(entry)) {
     entryObj[dir] = entry
   }

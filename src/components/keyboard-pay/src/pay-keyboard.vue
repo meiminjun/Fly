@@ -1,6 +1,5 @@
 <template>
     <div class="pay-box" v-if="isPay">
-        <!-- <transition v-on:before-enter="beforeEnter"> -->
         <div v-if="isPay">
             <!-- 标题 -->
             <div class="title v-1px-b pr">
@@ -17,7 +16,6 @@
                     <input type="password" :value="val[i]" disabled>
                 </div>
             </div>
-
             <!--keyboard-->
             <div class="key-box" v-if="keyShow">
                 <div class="item v-1px-t" v-for="(item, i) in keyList" :key="i">
@@ -47,7 +45,6 @@
                 </slot>
             </div>
         </div>
-        <!-- </transition> -->
     </div>
 </template>
 <script>
@@ -59,7 +56,7 @@ export default {
             type: String,
             default: '请输入支付密码'
         },
-        highlightColor: {// 高亮颜色
+        highlightColor: { // 高亮颜色
             type: String,
             default: '#ccc'
         },

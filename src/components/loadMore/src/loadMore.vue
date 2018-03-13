@@ -173,7 +173,7 @@ export default {
   width: 100%;
   overflow: hidden;
 }
-.fly-loadmore-content.fly-is-dropped-bottom {
+.fly-loadmore-content .fly-is-dropped-bottom {
   -webkit-transition: .2s;
   transition: .2s;
 }
@@ -199,7 +199,7 @@ export default {
   transition: .2s linear;
   vertical-align: middle;
 }
-.fly-loadmore-bottom span.fly-loadmore-rotate {
+.fly-loadmore-bottom span .fly-loadmore-rotate {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }

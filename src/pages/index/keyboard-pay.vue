@@ -8,7 +8,6 @@
     </div>
     <fly-pay-keyboard ref="pay" :is-pay='isPay' @pas-end='pasEnd' @close='isPay=false'>
     </fly-pay-keyboard>
-
     <fly-pay-keyboard ref="pay1" :is-pay='isPay1' @pas-end='pasEnd1' @close='isPay1=false'>
       <div slot="loading-ani">
         <svg t="1501642917555" class="icon" style="" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1891" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100">
@@ -16,12 +15,12 @@
         </svg>
       </div>
     </fly-pay-keyboard>
-
   </div>
 </template>
 
 <script>
 export default {
+  name: 'pay',
   data() {
     return {
       isPay: false,
