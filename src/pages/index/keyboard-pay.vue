@@ -3,7 +3,6 @@
     <div class="example">
       <button @click="isPay=true">点击弹出支付键盘</button>
     </div>
-
     <div class="example">
       <button @click="isPay1=true">自定义支付成功与失败动画</button>
     </div>
@@ -23,7 +22,6 @@
 
 <script>
 export default {
-  name: 'app',
   data() {
     return {
       isPay: false,

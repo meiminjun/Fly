@@ -7,9 +7,8 @@ import router from './router';
 import mei from "../../components/index";
 Vue.use(mei);
 
-import fly from "../../../dist/fly.js";
 import "../../../dist/fly.css";
-Vue.use(fly);
+import "../../../dist/fly.js";
 
 Object.keys(filters).forEach(key => {
     Vue.filter(key, filters[key]);

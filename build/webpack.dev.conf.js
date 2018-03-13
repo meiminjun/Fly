@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const fs = require('fs')
 
 function resolve(dir) {
@@ -27,7 +28,10 @@ const webpackConfig = merge(baseWebpackConfig, {
     path: resolve('dist'),
     filename: '[name].js',
     publicPath: 'http://localhost:8888/dist/'
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin('fly.css') // 分离css的地址
+  ]
 })
 
 Object.keys(webpackConfig.entry).forEach(function (name) {
