@@ -127,6 +127,9 @@ let config = {
       }
     ]
   },
+  externals: {
+    'vue': 'Vue'
+  },
   plugins: isProduction ? [
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.optimize.UglifyJsPlugin({

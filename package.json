@@ -1,6 +1,6 @@
 {
   "name": "vue-fly",
-  "version": "1.0.7",
+  "version": "1.0.10",
   "description": "Fly components for Vue.js 2",
   "main": "dist/fly.js",
   "scripts": {
@@ -21,13 +21,9 @@
     "url": "https://github.com/meiminjun/Fly"
   },
   "license": "MIT",
-  "dependencies": {
-    "vue": "^2.5.13"
-  },
-  "peerDevDependencies": {
-    "vue": "^2.5.13"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "vue": "^2.5.13",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
