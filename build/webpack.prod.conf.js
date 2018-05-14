@@ -4,7 +4,9 @@ const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = merge(baseWebpackConfig({
+  mode: 'production'
+}), {
   entry: {
     fly: './src/components/index.js'
   },
@@ -14,10 +16,11 @@ const webpackConfig = merge(baseWebpackConfig, {
     filename: 'fly.js',
     library: 'fly',
     libraryTarget: 'umd',
-    umdNamedDefine: true
+    umdNamedDefine: true,
+    globalObject: 'this'
   },
-  plugins: [
-    new ExtractTextPlugin('fly.css') // 分离css的地址
+  plugins:[
+    new ExtractTextPlugin('fly.css')
   ]
 })
 

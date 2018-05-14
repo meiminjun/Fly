@@ -20,7 +20,9 @@ var entry = fs.readdirSync(path.join(__dirname, '..', 'src/pages/')).reduce((ent
 }, {})
 
 
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = merge(baseWebpackConfig({
+  mode: 'development',
+}), {
   entry: entry,
   output: {
     path: resolve('dist'),
@@ -28,7 +30,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     publicPath: 'http://localhost:8888/dist/'
   },
   plugins: [
-    new ExtractTextPlugin('fly.css') // 分离css的地址
+    new ExtractTextPlugin('[name]/style.css')
   ]
 })
 

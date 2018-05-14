@@ -1,15 +1,19 @@
 const path = require('path') // 导入路径包
 const webpack = require('webpack')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
-// const UglifyJsPlugin = require('uglifyjs-webpack-plugin') // 不能用这个
-const env = process.env.NODE_ENV
-const isProduction = env === 'production'
-
+var isProduction;
 const fs = require('fs')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+function resolve(dir) {
+  return path.join(__dirname, '..', dir)
+}
+
+// function root(sub) {
+//   return path.join(path.resolve(), sub);
+// }
 
 const vueCssLoaders = function (options) {
   options = options || {}
-
+  // console.log(isProduction)
   const cssLoader = {
     loader: 'css-loader',
     options: {
@@ -19,7 +23,7 @@ const vueCssLoaders = function (options) {
   }
 
   // generate loader string to be used with extract text plugin
-  function generateLoaders (loader, loaderOptions) {
+  function generateLoaders(loader, loaderOptions) {
     const loaders = [cssLoader]
     if (loader) {
       loaders.push({
@@ -54,113 +58,162 @@ const vueCssLoaders = function (options) {
   }
 }
 
-let config = {
-  devtool: isProduction ? 'none' : '#eval-source-map',
-  resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.vue', '.jsx', '.json', '.scss'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      'pages': path.resolve(__dirname, '..', 'src/pages'),
-      'components': path.resolve(__dirname, '..', 'src/components'),
-      'common': path.resolve(__dirname, '..', 'src/common')
-    }
-  },
-  module: {
-    loaders: [
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [isProduction ? 'css-loader?minimize' : 'css-loader']
-        })
-      },
-      {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [isProduction ? 'css-loader?minimize' : 'css-loader', 'sass-loader']
-        })
-      },
-      { test: /\.tsx?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/,
-        options: {
-          appendTsSuffixTo: [/\.vue$/] // 解析.vue文件需要添加
+let config =
+
+  module.exports = options => {
+    let mode = options.mode
+    isProduction = mode === 'production'
+    // console.log('测试')
+    // console.log(isProduction)
+    return {
+      mode: mode,
+      devtool: isProduction ? 'none' : 'eval-source-map',
+      // entry: {
+      //   docs: './src/pages/docs/index'
+      // },
+      // entry: entry,
+      // output: {
+      //   path: path.resolve(__dirname, 'build'),
+      //   filename: '[name].js',
+      //   publicPath: 'http://localhost:3333/build/'
+      // },
+      resolve: {
+        extensions: ['.ts', '.tsx', '.js', '.vue', '.jsx', '.json', '.scss'],
+        alias: {
+          'vue$': 'vue/dist/vue.esm.js',
+          'pages': path.resolve(__dirname, '..', 'src/pages'),
+          'components': path.resolve(__dirname, '..', 'src/components'),
+          'common': path.resolve(__dirname, '..', 'src/common')
         }
       },
-      {
-        test: /\.html$|njk|nunjucks/,
-        use: [
-          'html-loader',
+      module: {
+        noParse: /jquery|lodash/,
+        rules: [
           {
-            // loader: 'nunjucks-html-loader',
-            loader: './tools/loaders/nunjucks-loader',
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+            include: [
+              resolve('src')
+            ]
+          },
+          {
+            test: /\.tsx?$/,
+            use: [
+              {
+                loader: 'babel-loader'
+              },
+              {
+                loader: 'ts-loader',
+                options: {
+                  appendTsSuffixTo: [/\.vue$/] // 解析.vue文件需要添加
+                }
+              }
+            ],
+            include: [
+              resolve('src')
+            ]
+          },
+          {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: ['css-loader']
+            })
+          },
+          {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract({
+              fallback: 'style-loader',
+              use: ['css-loader', 'sass-loader']
+            })
+          },
+          {
+            test: /\.hbs$/,
+            loader: 'handlebars-loader?helperDirs[]=' + __dirname + '/helpers',
+            exclude: /node_modules/
+          },
+          {
+            test: /\.html$|njk|nunjucks/,
+            use: [
+              'html-loader',
+              {
+                // loader: 'nunjucks-html-loader',
+                loader: './tools/loaders/nunjucks-loader',
+                options: {
+                  // Other super important. This will be the base
+                  // directory in which webpack is going to find
+                  // the layout and any other file index.njk is calling.
+                  searchPaths: ['./src/pages']
+                }
+              }
+            ]
+          },
+          {
+            test: /\.md$/,
+            use: [
+              {
+                loader: 'html-loader'
+              },
+              {
+                loader: 'markdown-loader',
+                options: {
+                  pedantic: true,
+                  highlight: (code, lang) => {
+                    if (lang) {
+                      hljs.highlightAuto(code, [lang]).value
+                    }
+                    return hljs.highlightAuto(code).value
+                  }
+                }
+              }
+            ]
+          },
+          {
+            test: /\.vue$/,
+            loader: 'vue-loader',
             options: {
-              // Other super important. This will be the base
-              // directory in which webpack is going to find
-              // the layout and any other file index.njk is calling.
-              searchPaths: ['./src/pages']
+              loaders: vueCssLoaders({
+                sourceMap: isProduction,
+                extract: isProduction
+              }),
+              transformToRequire: {
+                video: 'src',
+                source: 'src',
+                img: 'src',
+                image: 'xlink:href'
+              }
+            }
+          },
+          {
+            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+            loader: 'url-loader',
+            include: resolve('src'),
+            exclude: /node_modules/,
+            query: {
+              limit: 8192,
+              outputPath: 'pages/[name]/images/'
             }
           }
         ]
       },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: vueCssLoaders({
-            sourceMap: isProduction,
-            extract: isProduction
-          }),
-          transformToRequire: {
-            video: 'src',
-            source: 'src',
-            img: 'src',
-            image: 'xlink:href'
-          }
+      // target: 'node',
+      externals: [
+        // nodeExternals({
+        //   modulesFromFile: {
+        //     exclude: ['vue']
+        //   }
+        // }), // 防止其他库有依赖时，重复导入的情况
+        {
+          'vue': 'Vue',
+          'vue-router': 'VueRouter',
+          'vuex': 'Vuex',
+          "react": "React",
+          "react-dom": "ReactDOM"
         }
-      },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        query: {
-          limit: 10000
-        }
-      }
-    ]
-  },
-  externals: {
-    'vue': 'Vue',
-    'vue-router': 'VueRouter',
-    'vuex': 'Vuex'
-  },
-  plugins: isProduction ? [
-    new webpack.optimize.ModuleConcatenationPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      minimize: true,
-      sourceMap: false,
-      mangle: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    // new UglifyJsPlugin({ // 这个有坑，会造成找不到组件 vue 中的 name 为""
-    //   cache: false, // 是否启用缓存
-    //   parallel: true // 启用并发
-    // }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
-    })
-  ] : [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(env)
-    })
-  ]
-}
-
-module.exports = config
+      ],
+      plugins: [
+        // new ExtractTextPlugin('[name]/style.css'), // 分离css的地址
+      ]
+    }
+  }

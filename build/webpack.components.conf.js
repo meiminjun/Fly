@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-
 const fs = require('fs')
 
 // var entry = fs.readdirSync(path.join(__dirname, '..', 'src/components/vue')).reduce((entryObj, dir) => {
@@ -16,7 +15,9 @@ const fs = require('fs')
 //     return entryObj
 // }, {})
 
-const webpackConfig = merge(baseWebpackConfig, {
+const webpackConfig = merge(baseWebpackConfig({
+    mode: 'production',
+}), {
     entry: {
         'loading': path.resolve(__dirname, '../src/components/loading/index.js'),
         'message': path.resolve(__dirname, '../src/components/message/index.js'),
@@ -28,8 +29,8 @@ const webpackConfig = merge(baseWebpackConfig, {
         publicPath: '/dist/',
         filename: '[name]/index.js'
     },
-    plugins: [
-        new ExtractTextPlugin('[name]/style.css') // 分离css的地址
+    plugins:[
+        new ExtractTextPlugin('[name]/style.css')
     ]
 })
 
