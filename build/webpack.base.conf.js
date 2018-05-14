@@ -81,21 +81,28 @@ let config = {
           use: [isProduction ? 'css-loader?minimize' : 'css-loader', 'sass-loader']
         })
       },
-      { test: /\.tsx?$/, loader: 'ts-loader',
+      { test: /\.tsx?$/,
+        loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
-          appendTsSuffixTo: [/\.vue$/], // 解析.vue文件需要添加
+          appendTsSuffixTo: [/\.vue$/] // 解析.vue文件需要添加
         }
       },
       {
-        test: /\.html$/,
-        loader: './tools/loaders/swig-loader',
-        query: {
-          // env: env,
-          // platform: platform,
-          // config: config
-        },
-        include: [path.resolve('./src')]
+        test: /\.html$|njk|nunjucks/,
+        use: [
+          'html-loader',
+          {
+            // loader: 'nunjucks-html-loader',
+            loader: './tools/loaders/nunjucks-loader',
+            options: {
+              // Other super important. This will be the base
+              // directory in which webpack is going to find
+              // the layout and any other file index.njk is calling.
+              searchPaths: ['./src/pages']
+            }
+          }
+        ]
       },
       {
         test: /\.vue$/,
