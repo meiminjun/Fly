@@ -21,7 +21,15 @@ const webpackConfig = merge(baseWebpackConfig({
   },
   plugins:[
     new ExtractTextPlugin('fly.css')
-  ]
+  ],
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    }
+  }
 })
 
 module.exports = webpackConfig

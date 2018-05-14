@@ -196,24 +196,6 @@ let config =
             }
           }
         ]
-      },
-      // target: 'node',
-      externals: [
-        // nodeExternals({
-        //   modulesFromFile: {
-        //     exclude: ['vue']
-        //   }
-        // }), // 防止其他库有依赖时，重复导入的情况
-        {
-          'vue': 'Vue',
-          'vue-router': 'VueRouter',
-          'vuex': 'Vuex',
-          "react": "React",
-          "react-dom": "ReactDOM"
-        }
-      ],
-      plugins: [
-        // new ExtractTextPlugin('[name]/style.css'), // 分离css的地址
-      ]
+      }
     }
   }

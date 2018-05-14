@@ -31,7 +31,14 @@ const webpackConfig = merge(baseWebpackConfig({
   },
   plugins: [
     new ExtractTextPlugin('[name]/style.css')
-  ]
+  ],
+  externals: {
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'vuex': 'Vuex',
+    "react": "React",
+    "react-dom": "ReactDOM"
+  }
 })
 
 Object.keys(webpackConfig.entry).forEach(function (name) {

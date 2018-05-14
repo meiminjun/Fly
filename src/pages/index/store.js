@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex)
-import createLogger from 'vuex/dist/logger';
+// import createLogger from 'vuex/dist/logger';
 const debug = process.env.NODE_ENV !== 'production';
 
 // -------------------------编码开始-----------------------------
@@ -49,8 +49,7 @@ let store = new Vuex.Store({
             mutations
         }
     },
-    strict: debug,
-    plugins: debug ? [createLogger()] : []
+    strict: debug
 });
 window.__store = store;
 export default store;
