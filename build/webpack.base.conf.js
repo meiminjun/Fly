@@ -135,7 +135,9 @@ let config = {
     ]
   },
   externals: {
-    'vue': 'Vue'
+    'vue': 'Vue',
+    'vue-router': 'VueRouter',
+    'vuex': 'Vuex'
   },
   plugins: isProduction ? [
     new webpack.optimize.ModuleConcatenationPlugin(),
