@@ -22,7 +22,8 @@ const webpackConfig = merge(baseWebpackConfig({
         'loading': path.resolve(__dirname, '../src/components/loading/index.js'),
         'message': path.resolve(__dirname, '../src/components/message/index.js'),
         'loadMore': path.resolve(__dirname, '../src/components/loadMore/index.js'),
-        'keyboard': path.resolve(__dirname, '../src/components/keyboard-pay/index.js')
+        'keyboard-pay': path.resolve(__dirname, '../src/components/keyboard-pay/index.js'),
+        'keyboard': path.resolve(__dirname, '../src/components/keyboard/index.js')
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
